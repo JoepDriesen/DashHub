@@ -1,0 +1,16 @@
+body {
+    overflow-y: scroll;
+}
+
+.alert:not(.alert-dismissible) .close {
+    display: none;
+}
+
+.form-horizontal .control-label {
+    padding-top: 13px;
+}
+
+#dashhub-loader {
+    height: 40px;
+    margin: 40px 0 10px;
+}
