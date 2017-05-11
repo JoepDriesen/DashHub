@@ -101,7 +101,7 @@ $( function() {
         var github_repository = localStorage.getItem( 'github_repository' );
         var encryption_passphrase = localStorage.getItem( 'encryption_passphrase' );
 
-        if ( github_username !== undefined && github_password !== undefined && github_repository !== undefined && encryption_passphrase !== undefined )
+        if ( github_username !== null && github_password !== null && github_repository !== null && encryption_passphrase !== null )
             return cb( github_username, github_password, github_repository, encryption_passphrase );
 
         $( '#dashhub-modal .modal-title' ).text( "Specify Database Credentials" );
