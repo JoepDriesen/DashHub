@@ -37,8 +37,6 @@ $( function() {
             plugin.json.height = item.height;
             
             if ( plugin.initialized )
-                console.log(plugin)
-            if ( plugin.initialized )
                 return storage.saveObject( plugin.json, ['plugin'], plugin.id );
             plugin.initialized = true;
             
@@ -173,7 +171,6 @@ $( function() {
         $.when( storage.objects( ['plugin'] ) ).then( function( loaded_plugins ) {
             
             plugins = loaded_plugins;
-            console.log(plugins)
             
             if ( plugins.length <= 0 )
                 return $( '#dashhub-loader' ).fadeOut( 500, function() {
@@ -189,6 +186,8 @@ $( function() {
                     var $panel = $pp.clone();
                     $panel.hide().removeClass( 'collapse' );
                     $panel.data( 'plugin-index', n );
+                    
+                    $.getScript( plugin.json.repository_url );
                     
                     grid.addWidget( $panel, plugin.json.x ? plugin.json.x : 0, plugin.json.y ? plugin.json.y : 100, plugin.json.width ? plugin.json.width : 3, plugin.json.height ? plugin.json.height : 2 )
                     
